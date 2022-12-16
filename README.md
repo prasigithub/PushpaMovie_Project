@@ -1,2 +1,12 @@
 # PushpaMovie_Project
-#### jddfsfgv
+##
+##Built With
+
+
+Selenium - Browser automation framework
+
+Maven - Dependency management
+
+TestNG - Testing framework
+
+Allure - Reporting framework
