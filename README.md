@@ -1,6 +1,6 @@
 # PushpaMovie_Project
 
-## Table of contents
+#### Table of contents
 
 - Introduction
 - Requirements
