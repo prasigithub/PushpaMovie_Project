@@ -15,10 +15,10 @@ This project is to retrieve Release date and country of the movie Pushpa The ris
 ## Requirements
 To run the test you need to update the following dependencies in pom.xml
 
- <dependencies>
+ <code><dependencies></code>
     <dependency>
       <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
+   <code>  <artifactId>junit</artifactId></code>
       <version>4.12</version>
       <scope>test</scope>
     </dependency>
@@ -37,7 +37,7 @@ To run the test you need to update the following dependencies in pom.xml
   </dependencies>
 
 
-##Built With
+{Built With}
 
 Selenium - Browser automation framework
 
