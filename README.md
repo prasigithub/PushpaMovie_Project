@@ -4,12 +4,14 @@
 
 - Introduction
 - Requirements
-- Recommended modules
 - Installation
+- Requirements
 - Configuration
 - Troubleshooting
 - FAQ
+```
 
+```
 ## Introduction
 This project is to retrieve Release date and country of the movie Pushpa The rise: Part 1 from IMDB and Wikipedia and assert the information from both the websites.
 
@@ -20,8 +22,6 @@ The update site to install snapshot versions of the TestNG Eclipse plug-in is:
 
 `https://testng.org/testng-eclipse-update-site`
 
-Use it if you want to experiment with the new features or verify the bug fixes, and please [report back if you encounter any issues](https://github.com/cbeust/testng-eclipse/issues).
-
 To install it:
 * Click "Help -> Install New Software..." on top level menu
 * Paste the url `https://testng.org/testng-eclipse-update-site` to `Work with: ` text field and press enter.
@@ -29,80 +29,70 @@ To install it:
 * Click "Next" button and accept the license to complete the installation.
 * Restart Eclipse
 
-If you want to install previous version of beta, you can pick up one from [here](https://testng.org/testng-eclipse-update-site).
-1. Installing a Plugin:
-    * Inside Eclipse, click on the **Help** menu  
-    * Select **Install New Software**.
+## Create a New Maven Project in Eclipse
 
-    ![Install New Software-1](.README/install-new-software-eclipse-1.png)
+* Open your eclipse and Go to File > New > Others.
+* Select Maven Project and click on Next.
+* Un-check the 'Use default Workspace location' and with the help of the Browse button choose your workspace where you would like to set up your Maven project.
+* Select the archetype, for now just select the 'maven-aechetype-quickstart' and click on Next.
+* Specify the Group Id & Artifact Id and click on Finish.
+* Go to the project location to see the newly created maven project. Now open the pom.xml file, which resides in the project folder. By default the POM is generated like this:
 
-1. Locating the Plugin:
-    * Click the **Add** button
-    * Enter **http://beust.com/eclipse** in the **Location** field
-
-    ![Install New Software-2](.README/install-new-software-eclipse-2.png)
-
-1. Selecting the Plugin:
-    * Ensure the **TestNG** checkbox is selected
-    * Click the "Next" button to the right bottom
-
-      ![Install New Software](.README/install-new-software-eclipse-3.png)
-
-
-1. Finishing up:
-    * Accept the terms of the license agreement
-    * Click on the Finish button
-
-    ![Install New Software](.README/install-new-software-eclipse-4.png)
-
-### <a id="setting-up-maven"></a>Setting up Maven
-
-1. Download Maven [here](https://maven.apache.org/download.cgi).
-
-    ![Maven Installation](.README/maven-installation-1.png)
-
-1. Unzip the distribution archive to the directory you wish to install Maven. I extracted maven to my `Documents` folder
+```
+ <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>3.1.0</version>
+        </plugin>
+        <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
+        <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>3.0.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.8.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.22.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.0.2</version>
+        </plugin>
+```
   
-1. Add Maven to the `PATH`. More information can be found in the `README.txt` in the zip folder.
-
-    * Here's an example of how I added Maven to my `PATH` on MacOS.
-    I added the folowing to the `~/.bash_profile`.
-
-    ```shell
-    $ export PATH=/Users/admin/Documents/Software/apache-maven-3.5.0/bin:$PATH
-
-    ```
-    * Then `source`d (execute) the content of the `~/.bash_profile`
-      
-    ``` shell 
-    $ source ~/.bash_profile
-    ```
-
-1. Verify Maven was correctly installed
-
-    * Command:
-
-    ```shell
-    $ mvn –version
-    ```
-
-    Maven dependencies are crucial to running any Maven project.
+  * Modify XML with the latest Junit and save the XML:
     
-    Maven dependencies contains key references to libraries that a Maven project needs to execute. The `pom.xml` in the root of a Maven project file stores the dependencies (similar to the `package.json` for Node and `gemfile` for Ruby) for a project.
+```
+<dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+```
+## Configuration
 
-## <a id="running-the-project"></a> Running the Project
+* To make it a TestNG project just navigate to the Libraries tab and click on the Add Library button.
+* Choose TestNG from the list of libraries and click Next.
+* Now, you will see TestNG added to your project libraries. Click on Finish and you are all set with your testNG project.
+* Your Java project has been created successfully and you will be able to see it by clicking on the Package Explorer button on the left panel.
+* you need to add the Selenium API JAR files to your TestNG project
+* Navigate or choose the path where you have downloaded the Selenium Java language bindings.
+* After adding all JAR files, hit the button to Apply and Close.
 
-### <a id="from-eclipse"></a> From Eclipse
+### Creating Testng class in eclipse
 
-  1. Import this project into Eclispe
-  1. Right click the project then select **Run As** then **Maven Tests**
+* Navigate to src from the project folder and right-click the same. You will see TestNG as an option in the dropdown towards the bottom.
+* Click on it and you will now see two sub-options to either create a TestNG class or convert the class to TestNG. As we are creating a new TestNG class, you need to select the first option.
+* You can give any name to your class, for example, ‘Pushpa_Project’ and its package. For now, we will keep the basic annotations selected @BeforeMethod and @AfterMethod.
+* You are now all set to write code in your TestNG class.
 
-{Built With}
+   * @Test annotation implies that the method is a test method and any code written under it constitutes to be a test case.
+   * @BeforeMethod implies that the method beneath should be running before the test method.
+   * @AfterMethod, just as the name suggests implies that the method should run after the test method.
 
-Selenium - Browser automation framework
 
-Maven - Dependency management
 
-TestNG - Testing framework
-
-Allure - Reporting framework
