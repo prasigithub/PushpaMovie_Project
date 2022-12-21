@@ -2,18 +2,22 @@
 
 ## Table of contents
 
-- Introduction
-- Requirements
-- Installation
-- Requirements
-- Configuration
-- Troubleshooting
-- FAQ
-```
+* Introduction
+* Requirements
+* Technologies
+* Installation
+* Configuration
 
-```
 ## Introduction
 This project is to retrieve Release date and country of the movie Pushpa The rise: Part 1 from IMDB and Wikipedia and assert the information from both the websites.
+
+## Requirements
+The project needs Selenium jar file, Junit and no other special requirements.
+
+## Technologies
+* Eclipse - IDE environment 
+* Maven - Build management tool
+* Testng - testing Framework
 
 ## Installation
 ### Install Snapshot
@@ -93,6 +97,10 @@ To install it:
    * @Test annotation implies that the method is a test method and any code written under it constitutes to be a test case.
    * @BeforeMethod implies that the method beneath should be running before the test method.
    * @AfterMethod, just as the name suggests implies that the method should run after the test method.
+
+## Run test
+* Right click the testng class, select Run as and click testng test.
+* Testng class will start the execution.
 
 
 
